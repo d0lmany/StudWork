@@ -1,0 +1,45 @@
+@import url("semantic.css");
+/* main */
+main{
+    padding-top: 25px;
+}
+form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px
+}
+#ei,#skillbox,#skill,.tip,.flex,
+#orgname,#code,#address,p{
+    grid-column: span 2
+}
+textarea{
+    grid-column: span 2;
+    resize: vertical;
+}
+a, button{
+    text-decoration: none;
+    font-size: 16px;
+}
+.card{
+    flex-direction: column;
+}
+p{
+    font-size: 18px;
+    margin: 0;
+}
+#errorMessages{
+    color: red;
+    grid-column: span 2;
+}
+#skillbox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#skillbox div{
+    background: var(--accent);
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+}

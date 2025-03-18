@@ -1,0 +1,146 @@
+/* kernel */
+/*TODO: удали неиспользуемые цвета
+TODO: удали неиспользуемые шрифты
+TODO: удали неиспользуемые папки
+*/
+@import url("fonts.css");
+*{
+    box-sizing: border-box;
+}
+:root{
+    --accent: #335DE8;
+    --accent1: #7793ee;
+    --dark_accent: #1F2937;
+    --light_accent: #E3E8F1;
+    --red: #E83333;
+    --green: #18D43B;
+    --gray: #8B8B8B;
+    --back: #F3F4F6;
+    --font: "Unbounded";
+}
+::selection{
+    background: var(--accent);
+    color: white;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+html{
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    -ms-overflow-style: none;
+    background: var(--back);
+}
+/* header */
+header{
+    position: absolute;
+    top: 0;
+    background-color: white;
+    font-size: 20px;
+    box-shadow: 0 2px 4px -3px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .5% 1%;
+    align-items: center;
+}
+.logo{
+    font-size: 26px;
+    font-weight: 500;
+}
+header a{
+    text-decoration: none;
+    color: black;
+    transition: ease-in .1s;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+header nav a:hover{
+    color: white;
+    background: var(--accent);
+}
+header nav{
+    display: flex;
+}
+main{
+    background: var(--back);
+}
+/* main */
+main{
+    padding: 25px 50px;
+    padding-top: 75px;
+}
+.button,button{
+    display: flex;
+    background: var(--accent);
+    color: white;
+    font-weight: 500;
+    padding: 15px;
+    gap: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    font-family: var(--font);
+    transition: ease-in .1s;
+    cursor: pointer;
+}
+:is(button, .button):hover{
+    background: var(--accent1);
+}
+.card{
+    display: flex;
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: 0 2px 4px -3px;
+}
+/* forms */
+input[type=text],input[type=date],input[type=email],input[type=file],input[type=number],select,textarea{
+    border: var(--gray) solid 1px;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 20px;
+    font-family: var(--font);
+    background: transparent;
+    outline: none;
+}
+/* footer */
+footer{
+    background: var(--dark_accent);
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+footer ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+footer a{
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+/* utilities */
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.col{
+    flex-direction: column;
+}
+.gap15{
+    gap: 15px;
+}
+.gap50{
+    gap: 50px
+}
+.red-bg{
+    background: var(--red);
+}
+.red-bg:hover{
+    background: #f84c4c;
+}

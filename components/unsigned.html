@@ -1,0 +1,177 @@
+<main>
+    <h1><span class="word">StudWork</span> - Ваш помощник в поиске места практики</h1>
+    <h2>Найдите лучшую стажировку или стажёра вместе с нами!</h2>
+    <div class="flex gap50">
+        <section class="flex col gap15">
+            <div class="flex gap15">
+                <img class="hi" src="../assets/img/Scientists in Laboratory.webp">
+                <img class="hi" src="../assets/img/Blonde Craftsman in a Busy Wood Workshop.webp">
+            </div>
+            <img class="hi" src="../assets/img/Contemplative Young Woman in Artistic Environment.webp">
+        </section>
+        <section class="flex col">
+            <p>Мы нашли “своё место” для нескольких тысяч талантливых человек в абсолютно разных сферах: от
+                программирования и химии до строительства и искусства!</p>
+            <p>Все организации проходят проверку на благонадёжность и существование.</p>
+        </section>
+    </div>
+    <div class="flex gap50">
+        <section class="flex col">
+            <p>Мы объединяем талантливых студентов с лучшими и топовыми компаниями на территории СНГ.</p>
+            <p>Почти каждая организация готова принять новичков и открыть для них невероятные карьерные возможности!</p>
+        </section>
+        <section class="flex gap15">
+            <img class="hi" src="../assets/img/Cheerful Woman in Safety Gear.webp">
+            <img class="hi" src="../assets/img/Young Woman in Laboratory.webp">
+        </section>
+    </div>
+    <h2 class="h2">Преимущества нашей платформы</h2>
+    <div class="flex gap50">
+        <div class="card">
+            <div class="cardHeader">
+                <img src="../assets/svg/student.svg">
+                Для студентов
+            </div>
+            <ul>
+                <li>Доступ к эксклюзивным стажировкам</li>
+                <li>Возможность получить реальный опыт работы</li>
+                <li>Наполнение портфолио</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="cardHeader">
+                <img src="../assets/svg/employer.svg">
+                Для работодателей
+            </div>
+            <ul>
+                <li>Поиск талантливых и мотивированных стажеров</li>
+                <li>Экономия времени на подборе кандидатов</li>
+                <li>Возможность вырастить будущих сотрудников</li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="h2">Отзывы наших пользователей</h2>
+    <div class="flex gap50">
+        <div class="card">
+            <div class="cardHeader">
+                - Анна, студентка
+            </div>
+            <p>Благодаря этой платформе я нашла отличную стажировку, которая помогла мне начать карьеру!</p>
+        </div>
+        <div class="card">
+            <div class="cardHeader">
+                - Алексей, HR-менеджер
+            </div>
+            <p>Мы нашли талантливых стажеров, которые внесли свежие идеи в нашу компанию и подняли наш рейтинг.</p>
+        </div>
+    </div>
+    <h1>Присоединяйтесь к нам сегодня!</h1>
+    <div class="flex" style="align-items:center">
+        <div class="card">
+            <div class="cardHeader">Регистрация</div>
+            <div id="errorMessages"></div>
+            <form id="registrationForm" action="registration" method="post">
+                <input type="text" placeholder="Имя" name="fname" id="fname" required>
+                <input type="text" placeholder="Фамилия" name="lname" id="lname" required>
+                <input type="text" placeholder="Отчество" name="pat" id="pat">
+                <input type="email" placeholder="Почта" name="email" id="email" required>
+                <input type="text" placeholder="Пароль" name="pas1" id="pas1" required>
+                <input type="text" placeholder="Подтвердите пароль" name="pas2" id="pas2" required>
+                <p style="font-weight: 300; grid-column: span 2;">*Пароль может содержать латинские буквы A-Z, цифры, 0-9 и спец. символы &_-</p>
+                <input type="date" placeholder="Дата рождения" name="date" id="date" required>
+                <input type="text" placeholder="Город проживания" name="city" id="city" required>
+                <select name="role" id="role" required>
+                    <option value="">Роль</option>
+                    <option value="student">Студент</option>
+                    <option value="employer">Работодатель</option>
+                </select>
+                <button>Продолжить</button>
+            </form>
+        </div>
+        <div class="card" style="padding:25px 50px">
+            <h2 style="font-weight:400">Уже есть<br>аккаунт?</h2>
+            <a href="login" class="button">Войти</a>
+        </div>
+    </div>
+    <style>
+        /* main */
+        main{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        p{
+            margin: 0;
+            font-size: 35px;
+            text-align: justify;
+        }
+        h1,h2{
+            margin: 0;
+            text-align: center;
+        }
+        .h2{
+            text-align: left;
+            font-weight: 500;
+            font-size: 36px;
+        }
+        .h2::before{
+            content: "+ ";
+            color: var(--accent);
+            font-size: 25px;
+            font-weight: 900;
+        }
+        img{
+            border: var(--accent) solid 10px;
+            border-radius: 10px;
+            transition: ease .1s;
+        }
+        .hi:hover{
+            box-shadow: 0 2px 4px -1px var(--accent);
+        }
+        .cardHeader{
+            display: flex;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 500;
+            align-items: center;
+        }
+        .cardHeader img{
+            border: none;
+            border-radius: 0;
+        }
+        .word{
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 4px;
+        }
+        .card ul{
+            margin: 0;
+        }
+        .card{
+            flex-direction: column;
+            font-size: 20px;
+            gap: 20px
+        }
+        .card p{
+            font-size: 20px;
+        }
+        form{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px
+        }
+        button{
+            font-size: 20px;
+            font-weight: bold;
+            justify-content: center;
+        }
+        a.button{
+            text-decoration: none;
+            justify-content: center;
+        }
+        #errorMessages{
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</main>
