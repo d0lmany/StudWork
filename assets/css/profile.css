@@ -1,0 +1,62 @@
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+#overlay > .card {
+    padding: 15px;
+}
+#overlay.show {
+    display: flex;
+}
+#overlay #body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: 650px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#overlay .red-bg {
+    padding: 5px 10px;
+    font-weight: 400;
+    border-radius: 7.5px;
+}
+article {
+    justify-content: space-between;
+    background: var(--back);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+article h3 {
+    margin: 0;
+}
+article .img {
+    width: 55px;
+    height: 55px;
+}
+article .flex .flex.col {
+    align-items: end;
+}
+article > .col > .flex {
+    gap: 100px;
+    width: 532px;
+}
+article span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 280px;
+    text-align: end;
+}
+article a, button {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px !important;
+}

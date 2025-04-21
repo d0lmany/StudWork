@@ -1,34 +1,130 @@
-@import url("semantic.css");
-/* modal */
-.modal {
+section {
+    background: var(--card-back);
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0px 1px 3px 1px rgba(0,0,0,.15)
+}
+section h1 {
+    margin: 0;
+    margin-bottom: 15px;
+}
+input, select {
+    font-size: 14px !important;
+    padding: 7.5px !important;
+}
+section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 325px;
+}
+article {
+    background: var(--back);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px 1px rgba(0,0,0,.15);
+    justify-content: space-between;
+}
+main {
+    align-items: baseline;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+article h3 {
+    margin: 0;
+    margin-right: 25px;
+}
+article .flex:first-child button {
+    padding: 0;
+    background: none;
+}
+article .flex:first-child button:hover {
+    background: none;
+}
+article .flex > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+article .flex > div > span {
+    width: max-content;
+}
+article .flex.gap50 {
+    border-top: solid 2px;
+    padding-top: 10px;
+}
+.img {
+    width: 55px;
+    height: 55px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 5px;
+}
+article button, article .button {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px;
+}
+.flex.gap50 {
+    font-size: 15px;
+}
+.context-menu {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    background: var(--back);
+    box-shadow: 0px 1px 3px 1px rgba(0,0,0,.15);
+    border-radius: 10px;
+    padding: 10px;
+}
+.context-menu button {
+    background: none;
+    padding: 0;
+    color: var(--text);
+    gap: 5px;
+    border-radius: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+}
+.context-menu button:hover {
+    background: #e5e5e5;
+}
+
+/*   cover-letter, invite   */
+#cover-letter-overlay, #invite-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1;
 }
-.modal-content {
-    background-color: white;
-    padding: 20px;
+.cover-letter.card {
+    flex-direction: column;
+    gap: 15px;
+    width: 600px;
+}
+:is(#invite-overlay, .cover-letter) :is(h3, p) {
+    margin: 0;
+    text-align: center;
+}
+.cover-letter textarea {
+    resize: none;
+    height: 400px;
+    border: solid 2px var(--gray);
     border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.modal-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-#closeModal {
-    background: var(--red);
-    width: 100%;
     font-size: 14px;
+    padding: 10px;
 }
-#closeModal:hover {
-    background: rgb(124, 0, 0);
+:is(#invite-overlay, .cover-letter) button {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px;
 }

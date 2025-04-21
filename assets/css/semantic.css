@@ -2,22 +2,40 @@
 /*TODO: удали неиспользуемые цвета
 TODO: удали неиспользуемые шрифты
 TODO: удали неиспользуемые папки
+TODO: ебани тёмную тему
+TODO: больше плавности и анимаций
 */
 @import url("fonts.css");
 *{
     box-sizing: border-box;
+    color: var(--text);
 }
 :root{
     --accent: #335DE8;
-    --accent1: #7793ee;
+    --accent-hover: #0e3bce;
     --dark_accent: #1F2937;
     --light_accent: #E3E8F1;
-    --red: #E83333;
-    --green: #18D43B;
+    --red: #D00000;
+    --green: #00A11B;
     --gray: #8B8B8B;
     --back: #F3F4F6;
+    --text: #1e1e1e;
     --font: "Unbounded";
+    --card-back: #fff;
 }
+/*@media (prefers-color-scheme: dark) {
+    :root {
+      --accent: #5B7CFE;
+      --accent-hover: #3D64FD;
+      --dark_accent: #E5E7EB;
+      --light_accent: #1F2937;
+      --red: #FF4D4D;
+      --green: #00E676;
+      --gray: #A5A5A5;
+      --back: #111827;
+      --text: #E5E7EB;
+    }
+  }*/
 ::selection{
     background: var(--accent);
     color: white;
@@ -53,7 +71,6 @@ header{
 }
 header a{
     text-decoration: none;
-    color: black;
     transition: ease-in .1s;
     padding: 5px 10px;
     border-radius: 10px;
@@ -65,15 +82,12 @@ header nav a:hover{
 header nav{
     display: flex;
 }
-main{
-    background: var(--back);
-}
 /* main */
 main{
     padding: 25px 50px;
     padding-top: 75px;
 }
-.button,button{
+.button, button{
     display: flex;
     background: var(--accent);
     color: white;
@@ -86,13 +100,15 @@ main{
     font-family: var(--font);
     transition: ease-in .1s;
     cursor: pointer;
+    align-items: center;
+    outline: none;
 }
 :is(button, .button):hover{
-    background: var(--accent1);
+    background: var(--accent-hover);
 }
 .card{
     display: flex;
-    background: white;
+    background: var(--card-back);
     border-radius: 25px;
     padding: 25px;
     box-shadow: 0 2px 4px -3px;
@@ -124,6 +140,35 @@ footer a{
     font-size: 12px;
     text-decoration: none;
 }
+/*   push   */
+#push {
+    z-index: 100;
+    position: fixed;
+    right: -1000px;
+    bottom: 20px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0px 1px 3px 1px rgba(0,0,0,.15);
+    border-radius: 10px;
+}
+#push h3 {
+    margin: 0;
+}
+#push p {
+    margin: 10px 0;
+}
+#push .flex :is(button, .button) {
+    padding: 7.5px 15px;
+    font-size: 14px;
+}
+@keyframes push {
+    from {
+        right: -1000px;
+    }
+    to {
+        right: 20px;
+    }
+}
 /* utilities */
 .flex{
     display: flex;
@@ -138,9 +183,39 @@ footer a{
 .gap50{
     gap: 50px
 }
+.alt{
+    background: none;
+    color: var(--accent);
+}
+.alt:hover{
+    background: var(--accent-hover);
+    color: white;
+}
 .red-bg{
     background: var(--red);
 }
+.red-bg-alt{
+    background: none;
+    color: var(--red);
+}
+.red-bg-alt:hover{
+    background: var(--red);
+    color: white;
+}
 .red-bg:hover{
-    background: #f84c4c;
+    background: #af1d1d;
+}
+.m-0{
+    margin: 0;
+}
+.none{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

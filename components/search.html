@@ -1,0 +1,71 @@
+<div class="flex col gap15">
+    <section>
+        <h1>Поиск</h1>
+        <form onsubmit="event.preventDefault()">
+            <input type="text" id="text" placeholder="Поиск">
+            <div class="flex">
+                <input type="reset" value="Сбросить" class="button alt">
+                <input type="button" value="Подтвердить" class="button" id="searches">
+            </div>
+        </form>
+    </section>
+    <section>
+        <h1>Фильтры</h1>
+        <form onsubmit="event.preventDefault()" id="thatForm">
+            <input type="number" id="salary" placeholder="Зарплата (не менее)" min="0">
+            <input type="text" id="location" placeholder="Город">
+            <div class="flex">
+                <input type="reset" value="Сбросить" class="button alt">
+                <input type="button" value="Подтвердить" class="button" id="filters">
+            </div>
+        </form>
+    </section>
+    <section>
+        <h1>Сбросить фильтры</h1>
+        <input type="button" value="Сбросить" class="button" id="reset">
+    </section>
+</div>
+<section>
+    <h1 class="none">Карточки</h1>
+    <div class="cards" style="width:1050px">
+        <h1>Загружаю...</h1>
+    </div>
+</section>
+<div class="context-menu">
+    <button class="menu-item" id="addToFavorites">
+        <img src="./assets/svg/heart.svg" alt="В избранное">В избранное
+    </button>
+    <button class="menu-item" id="report">
+        <img src="./assets/svg/flag.svg" alt="Пожаловаться">Пожаловаться
+    </button>
+</div>
+<div id="push">
+    <h3></h3>
+    <p></p>
+    <div class="flex">
+        <button id="pd">Ок</button>
+    </div>
+</div>
+<div id="cover-letter-overlay">
+    <form class="cover-letter card" onsubmit="event.preventDefault()">
+        <h3>Сопроводительное письмо</h3>
+        <p id="tip">Работодатель не принимает отклики без сопроводительного письма</p>
+        <textarea id="letter"></textarea>
+        <div class="flex">
+            <button id="cancel" type="reset">Отмена</button>
+            <button id="send" type="button"></button>
+        </div>
+    </form>
+</div>
+<div id="invite-overlay">
+    <div class="card col gap15">
+        <h3>Пригласить на вакансию</h3>
+        <select id="currentVacancy">
+            <option value="">Предлагаемая вакансия</option>
+        </select>
+        <div class="flex">
+            <button id="resetInvite">Отмена</button>
+            <button id="sendInvite">Пригласить</button>
+        </div>
+    </div>
+</div>

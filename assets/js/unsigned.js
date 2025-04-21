@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function(){
         const date = document.getElementById('date').value;
         const city = document.getElementById('city').value.trim();
         const role = document.getElementById('role').value;
-        const cyrillicRegex = /^[А-Яа-я'-]+$/, emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const cyrillicRegex = /^[А-ЯЁа-яё'-]+$/, emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[&_-])[A-Za-z\d&_-]{8,}$/;
-        const cityRegex = /^[А-Яа-я\s-]+$/;
+        const cityRegex = /^[А-ЯЁа-яё\s-]+$/;
         if (!cyrillicRegex.test(fname)) {
             showError('Имя должно содержать только кириллицу.');
             return;
@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         if (!emailRegex.test(email)) {
             showError('Введите корректный email.');
+            return;
+        }
+        if (emailUnique()) {
             return;
         }
         if (!passwordRegex.test(pas1)) {
@@ -68,6 +71,21 @@ document.addEventListener("DOMContentLoaded", function(){
         this.submit();
     });
 })
+async function emailUnique(email) {
+    fetch('api/users/filtered', {
+        method: 'POST',
+        headers: { 'Content-type': 'application/json' },
+        body: JSON.stringify({email: email})
+    })
+    .then(r => r.json())
+    .then(r => {
+        if (r.length > 0) {
+            showError('Такой email уже занят');
+            return true;
+        }
+    })
+    return false;
+}
 function showError(message) {
     const errorDiv = document.getElementById('errorMessages');
     errorDiv.innerHTML = message;

@@ -66,7 +66,7 @@
         </div>
     </div>
     <h1>Присоединяйтесь к нам сегодня!</h1>
-    <div class="flex" style="align-items:center">
+    <div class="flex" style="align-items:center; gap:15px">
         <div class="card">
             <div class="cardHeader">Регистрация</div>
             <div id="errorMessages"></div>
@@ -77,7 +77,8 @@
                 <input type="email" placeholder="Почта" name="email" id="email" required>
                 <input type="text" placeholder="Пароль" name="pas1" id="pas1" required>
                 <input type="text" placeholder="Подтвердите пароль" name="pas2" id="pas2" required>
-                <p style="font-weight: 300; grid-column: span 2;">*Пароль может содержать латинские буквы A-Z, цифры, 0-9 и спец. символы &_-</p>
+                <p style="font-weight: 300; grid-column: span 2;">*Пароль может содержать латинские буквы A-Z, цифры,
+                    0-9 и спец. символы &_-</p>
                 <input type="date" placeholder="Дата рождения" name="date" id="date" required>
                 <input type="text" placeholder="Город проживания" name="city" id="city" required>
                 <select name="role" id="role" required>
@@ -85,6 +86,7 @@
                     <option value="student">Студент</option>
                     <option value="employer">Работодатель</option>
                 </select>
+                <input type="hidden" name="fromIndex" value="true">
                 <button>Продолжить</button>
             </form>
         </div>
@@ -93,85 +95,148 @@
             <a href="login" class="button">Войти</a>
         </div>
     </div>
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <p>Не так быстро!<br>Нужен аккаунт</p>
+            <a href="login" class="button">Войти</a>
+            <a href="#registrationForm" class="button" onclick="closeModal()" style="margin:10px 0">Зарегистрироваться</a>
+            <button id="closeModal">Закрыть</button>
+        </div>
+    </div>
     <style>
         /* main */
-        main{
+        main {
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
-        p{
+
+        p {
             margin: 0;
             font-size: 35px;
             text-align: justify;
         }
-        h1,h2{
+
+        h1,
+        h2 {
             margin: 0;
             text-align: center;
         }
-        .h2{
+
+        .h2 {
             text-align: left;
             font-weight: 500;
             font-size: 36px;
         }
-        .h2::before{
+
+        .h2::before {
             content: "+ ";
             color: var(--accent);
             font-size: 25px;
             font-weight: 900;
         }
-        img{
+
+        img {
             border: var(--accent) solid 10px;
             border-radius: 10px;
             transition: ease .1s;
         }
-        .hi:hover{
+
+        .hi:hover {
             box-shadow: 0 2px 4px -1px var(--accent);
         }
-        .cardHeader{
+
+        .cardHeader {
             display: flex;
             gap: 10px;
             font-size: 24px;
             font-weight: 500;
             align-items: center;
         }
-        .cardHeader img{
+
+        .cardHeader img {
             border: none;
             border-radius: 0;
         }
-        .word{
+
+        .word {
             text-decoration: underline;
             text-decoration-color: var(--accent);
             text-decoration-thickness: 4px;
         }
-        .card ul{
+
+        .card ul {
             margin: 0;
         }
-        .card{
+
+        .card {
             flex-direction: column;
             font-size: 20px;
             gap: 20px
         }
-        .card p{
+
+        .card p {
             font-size: 20px;
         }
-        form{
+
+        form {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px
         }
-        button{
+
+        button {
             font-size: 20px;
             font-weight: bold;
             justify-content: center;
         }
-        a.button{
+
+        a.button {
             text-decoration: none;
             justify-content: center;
         }
-        #errorMessages{
+
+        #errorMessages {
             color: red;
             margin-top: 10px;
+        }
+
+        /* modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #closeModal {
+            background: var(--red);
+            width: 100%;
+            font-size: 14px;
+        }
+
+        #closeModal:hover {
+            background: rgb(124, 0, 0);
         }
     </style>
 </main>

@@ -8,8 +8,8 @@ form{
     grid-template-columns: repeat(2, 1fr);
     gap: 25px
 }
-#ei,#skillbox,#skill,.tip,.flex,
-#orgname,#code,#address,p{
+#ei,#skillBox,#skill,.tip,.flex,
+#orgName,#code,#address,p{
     grid-column: span 2
 }
 textarea{
@@ -29,17 +29,22 @@ p{
 }
 #errorMessages{
     color: red;
-    grid-column: span 2;
+    font-size: 16px;
 }
-#skillbox{
+#skillBox{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
-#skillbox div{
+#skillBox div{
     background: var(--accent);
     border-radius: 10px;
     color: white;
     padding: 5px 10px;
     border: none;
+    cursor: pointer;
+    transition:ease-in .2s;
+}
+#skillBox div:hover{
+    box-shadow: 0 0 1px 1px var(--accent);
 }

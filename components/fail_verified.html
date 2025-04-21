@@ -1,0 +1,29 @@
+<main>
+    <div class="card">
+        <h1>К сожалению, ваш аккаунт не прошёл верификацию.</h1>
+        <p>
+            Обычно, это происходит потому что данные были указаны некорректно, либо произошла ошибка при вашей
+            верификации. Вы можете оспорить наше решение, либо удалить аккаунт и пересоздать его позднее.
+            Если аккаунт не прошёл верификацию, а апелляция не была подана в течении недели - аккаунт удалится
+            автоматически.
+        </p>
+        <div class="flex">
+            <button class="red-bg-alt" id="deleteAccount">Удалить аккаунт</button>
+            <button id="appellation">Подать апелляцию</button>
+        </div>
+    </div>
+    <style>
+        .card {
+            flex-direction: column;
+        }
+        .card h1 {
+            margin: 10px;
+            text-align: center;
+        }
+        p {
+            text-align: justify;
+            font-size: 18px;
+        }
+    </style>
+    <script type="module" src="./assets/js/fail_verified.js"></script>
+</main>
